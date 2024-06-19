@@ -1,0 +1,1 @@
+rm -rf ckb/store && RUST_LOG=debug ~/code/ckb-pcn-node/target/debug/cfn-node -c config.yml -d .

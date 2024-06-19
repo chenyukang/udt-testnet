@@ -1,0 +1,41 @@
+ckb:
+  listening_port: 8344
+  network: "Testnet"
+  auto_accept_channel_ckb_funding_amount: 20
+
+rpc:
+  listening_addr: 127.0.0.1:8444
+
+ckb_chain:
+  rpc_url: "https://testnet.ckbapp.dev/"
+
+  udt_whitelist:
+  - name: simple_udt
+    script:
+      code_hash: 0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4
+      hash_type: Type
+      args: 0x.*
+    cell_deps:
+    - dep_type: code
+      tx_hash: 0xe12877ebd2c3c364dc46c5c992bcfaf4fee33fa13eebdf82c591fc9825aab769
+      index: 0
+    - dep_type: code
+      tx_hash: 0xbfd6d68b328a02606f1f65ee0f79f8ed5f76dfe86998c7aaa9ee4720d53f4c49
+      index: 0
+  - name: xudt
+    script:
+      code_hash: 0x25c29dc317811a6f6f3985a7a9ebc4838bd388d19d0feeecf0bcd60f6c0975bb
+      hash_type: Type
+      args: 0x.*
+    cell_deps:
+    - dep_type: code
+      tx_hash: 0xbf6fb538763efec2a70a6a3dcb7242787087e1030c4e7d86585bc63a9d337f5f
+      index: 0
+    - dep_type: code
+      tx_hash: 0xbfd6d68b328a02606f1f65ee0f79f8ed5f76dfe86998c7aaa9ee4720d53f4c49
+      index: 0
+
+services:
+  - ckb
+  - rpc
+  - ckb_chain
